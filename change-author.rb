@@ -77,8 +77,8 @@ end
 
 begin
 	target_dir = ARGV[0]
-	timestamp_path = target_dir + '/change_author.timestamp'
-	config_path = target_dir + '/change_author.config'
+	timestamp_path = target_dir + '/change-author.timestamp'
+	config_path = target_dir + '/change-author.config'
 
 	raise "#{target_dir} is not found." if ! File.exists?(target_dir)
 	raise "#{config_path} is not found." if ! File.exists?(config_path)
