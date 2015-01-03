@@ -47,12 +47,14 @@ def change_author_for_file(file_path, last_modified)
 	return if ! is_change_author
 
 	puts 'Changed author: ' + file_path
-	open(file_path + '.tmp', 'w:utf-8') { |f|
+	tmp_file_path = file_path + '.tmp'
+	open(tmp_file_path, 'w:utf-8') { |f|
 		lines.each { |line|
 			f.write line
 		}
 	}
-	FileUtils.cp(file_path + '.tmp', file_path)
+	FileUtils.cp(tmp_file_path, file_path)
+	FileUtils.rm(tmp_file_path)
 end
 
 def read_timestamp(path)
